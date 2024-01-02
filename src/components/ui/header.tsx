@@ -4,34 +4,32 @@ import { Card, CardHeader, CardTitle } from './card';
 
 const Header = () => {
   const navigation_links = [
+    { text: 'Início', href: '/' },
     { text: 'Sobre', href: '/me' },
     { text: 'Projetos', href: '/projects' },
-    { text: 'Blog', href: '/blog' },
-    { text: 'Contato', href: '/contact' }
+    { text: 'Blog', href: '/blog' }
   ];
   return (
-    <header className="flex h-[14vh] w-full items-center justify-center px-8">
-      <Card className="flex w-full items-center justify-between border-none bg-inherit">
+    <header className="fixed flex h-[14vh] w-full items-center justify-center px-8 backdrop-blur-lg">
+      <Card className="flex w-full max-w-7xl items-center justify-between border-none bg-inherit shadow-none">
         <CardHeader className="p-0">
-          <CardTitle className="gradient-text font-bold">
-            leonardo h <span className="text-foreground">{'>'}</span>_
-          </CardTitle>
+          <CardTitle className="font-bold">leo.</CardTitle>
         </CardHeader>
-        <nav>
-          <ul className="hover:text-muted-foreground/30 duration-400 flex items-center justify-center transition-colors">
-            {navigation_links.map((link, index) => (
-              <li
-                key={index}
-                className="hover:text-foreground duration-400 px-8 font-medium transition-colors"
-              >
-                <Link href={link.href}>{`_${link.text}`}</Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
-        <Button variant="outline" className="rounded-full">
-          LeonardoHenrique@gmail.com
-        </Button>
+        <div className="flex items-center justify-center gap-8">
+          <nav>
+            <ul className="duration-400 flex items-center justify-center transition-colors hover:text-muted-foreground/30">
+              {navigation_links.map((link, index) => (
+                <li
+                  key={index}
+                  className="duration-400 px-8 font-medium transition-colors hover:text-foreground"
+                >
+                  <Link href={link.href}>{`// ${link.text}`}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <Button className="gradient rounded-full">Fale comigo</Button>
+        </div>
       </Card>
     </header>
   );
