@@ -1,113 +1,73 @@
-'use client';
+import { Card, CardDescription, CardHeader } from '@/components/ui/card';
+import SectionTitle from '@/components/ui/section-title';
+import { Github, Instagram, Linkedin } from 'lucide-react';
 
-import { Button } from '@/components/ui/button';
-import {
-  Card,
-  CardDescription,
-  CardHeader,
-  CardTitle
-} from '@/components/ui/card';
-import { Menubar } from '@/components/ui/menubar';
 import Image from 'next/image';
-import { useState } from 'react';
-
-type AboutViewProps = 'personInfo' | 'skills' | 'experience';
-
-const AboutPersonInfo = () => {
-  return (
-    <>
-      <CardHeader className="space-y-6 p-0">
-        <CardTitle>
-          Sou Léo, Um Desenvolvedor FullStack Criativo ;{')'}
-        </CardTitle>
-        <CardDescription>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolore
-          reiciendis possimus, nihil, sunt itaque aperiam, ex rem amet
-          perferendis quae magni mollitia dicta totam odio. Eveniet placeat
-          impedit deserunt aliquam!
-        </CardDescription>
-      </CardHeader>
-    </>
-  );
-};
-const AboutSkills = () => {
-  return (
-    <>
-      <h1>AboutSkills</h1>
-    </>
-  );
-};
-const AboutExperience = () => {
-  return (
-    <>
-      <h1>Experience</h1>
-    </>
-  );
-};
-
-const AboutView = ({ viewSelected }: { viewSelected: AboutViewProps }) => {
-  if (viewSelected === 'personInfo') {
-    return <AboutPersonInfo />;
-  }
-  if (viewSelected === 'skills') {
-    return <AboutSkills />;
-  }
-  if (viewSelected === 'experience') {
-    return <AboutExperience />;
-  }
-};
 
 const About = () => {
-  const [viewSelected, viewSetSelected] =
-    useState<AboutViewProps>('personInfo');
-
-  const handleViewAboutSelected = (view: AboutViewProps) => {
-    viewSetSelected(view);
-  };
-
   return (
-    <div className="mt-40 flex w-full flex-col items-center justify-center">
-      <Card className="mt-11 flex w-full items-center justify-between border-none bg-inherit shadow-none">
-        <div className="h-64 w-64 overflow-hidden rounded-full bg-foreground">
-          <Image
-            src="https://avatars.githubusercontent.com/u/100442262?v=4"
-            alt="Foto profile"
-            width={0}
-            sizes="100vw"
-            style={{ objectFit: 'contain' }}
-            height={0}
-            className="h-full w-full"
-          />
-        </div>
-
-        <div className="w-full max-w-2xl space-y-6">
-          <Menubar className="w-full max-w-fit rounded-full">
-            <Button
-              className="rounded-full"
-              variant={viewSelected === 'personInfo' ? 'default' : 'ghost'}
-              onClick={() => handleViewAboutSelected('personInfo')}
-            >
-              Informações pessoais
-            </Button>
-            <Button
-              className="rounded-full"
-              variant={viewSelected === 'experience' ? 'default' : 'ghost'}
-              onClick={() => handleViewAboutSelected('experience')}
-            >
-              Experiência
-            </Button>
-            <Button
-              className="rounded-full"
-              variant={viewSelected === 'skills' ? 'default' : 'ghost'}
-              onClick={() => handleViewAboutSelected('skills')}
-            >
-              Tecnologias
-            </Button>
-          </Menubar>
-          <AboutView viewSelected={viewSelected} />
-        </div>
-      </Card>
-    </div>
+    <section>
+      <div className="flex flex-col items-center justify-start">
+        <SectionTitle
+          title="Sobre."
+          variant="center"
+          description="Conheça um pouco sobre mim."
+        />
+        <Card className="flex w-full items-center justify-between border-none bg-inherit shadow-none">
+          <div className="h-72 w-72 border border-primary">
+            <Image
+              src="https://avatars.githubusercontent.com/u/100442262?v=4"
+              alt="Foto profile"
+              width={0}
+              sizes="100vw"
+              style={{ objectFit: 'contain' }}
+              height={0}
+              className="h-full w-full"
+            />
+          </div>
+          <div className="flex flex-col">
+            <CardHeader className="space-y-3 p-0">
+              {/* <CardTitle>Eu me chamo Léo.</CardTitle> */}
+              <CardDescription className="max-w-xl text-base">
+                Desde pequeno, desenvolvi uma forte afinidade com a tecnologia.
+                A paixão por explorar o vasto universo digital me acompanhava
+                desde de pequeno. No{' '}
+                <span className="text-primary">começo de 2020 </span>
+                começei a minha jornada de estudos sobre programação,
+                inicialmente com
+                <span className="text-primary">javascript.</span>
+                <br /> <br />
+                Posteriormente, aprofundei meus estudos em
+                <span className="text-primary"> desenvolvimento web</span>,
+                inicialmente focando em
+                <span className="text-primary"> HTML</span> e
+                <span className="text-primary"> CSS</span>. Conforme avançava,
+                explorei diversos frameworks. Além disso, dediquei tempo ao
+                estudo do
+                <span className="text-primary"> back-end</span>, compreendendo o
+                desenvolvimento de APIs e a manipulação de bancos de dados,
+                tanto relacionais quanto não relacionais. Durante esse percurso,
+                familiarizei-me com frameworks como NestJS, além de outros
+                notáveis,
+                <span className="text-primary"> como Node e Express</span>.
+              </CardDescription>
+            </CardHeader>
+            <ul className="mt-3 flex flex-col gap-3 text-muted-foreground">
+              <li className="flex items-center">
+                <Github className="mr-2 h-4 w-4" /> Github
+              </li>
+              <li className="flex items-center">
+                <Linkedin className="mr-2 h-4 w-4" /> Linkedin
+              </li>
+              <li className="flex items-center">
+                <Instagram className="mr-2 h-4 w-4" />
+                Instagram
+              </li>
+            </ul>
+          </div>
+        </Card>
+      </div>
+    </section>
   );
 };
 
