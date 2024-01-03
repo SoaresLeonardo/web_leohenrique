@@ -1,0 +1,23 @@
+export const skills = [
+  'NextJS',
+  'ReactJS',
+  'HTML5',
+  'CSS3',
+  'TailwindCSS',
+  'JavaScript',
+  'TypeScript',
+  'NodeJS',
+  'Express',
+  'PostgreSQL',
+  'GraphQL',
+  'Git',
+  'Storybook',
+  'TypeORM',
+  'PrismaORM',
+  'NestJS',
+  'CSS-in-JS',
+  'Redux',
+  'Jest',
+  'React-Query',
+  'React Testing'
+];
