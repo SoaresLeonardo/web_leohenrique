@@ -1,16 +1,14 @@
 'use client';
 
+import { useCursor } from '@/hooks/useCursor';
 import { useEffect, useState } from 'react';
 
 const Cursor = () => {
   const [cursorPosition, setCursorPosition] = useState({ x: 0, y: 0 });
-  const [outlinePosition, setOutlinePosition] = useState({ x: 0, y: 0 });
+  const { isHovered } = useCursor();
 
   const handleMouseMove = (e: MouseEvent) => {
     setCursorPosition({ x: e.clientX, y: e.clientY });
-    setTimeout(() => {
-      setOutlinePosition({ x: e.clientX, y: e.clientY });
-    }, 100);
   };
 
   useEffect(() => {
@@ -22,16 +20,14 @@ const Cursor = () => {
   }, []);
 
   return (
-    <>
-      <div
-        className="cursor-outline"
-        style={{ top: outlinePosition.y, left: outlinePosition.x }}
-      ></div>
-      <div
-        className="cursor-dot"
-        style={{ top: cursorPosition.y, left: cursorPosition.x }}
-      ></div>
-    </>
+    <div
+      className={`cursor-dot ${isHovered ? 'hovered' : ''}`}
+      style={{
+        top: cursorPosition.y,
+        left: cursorPosition.x,
+        transform: `scale(${isHovered ? 1.5 : 1})`
+      }}
+    />
   );
 };
 
