@@ -1,4 +1,3 @@
-import { Button } from '@/components/ui/button';
 import {
   Card,
   CardDescription,
@@ -6,17 +5,18 @@ import {
   CardTitle
 } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 
 const Intro = () => {
   return (
-    <section className="content flex h-screen min-h-screen items-center justify-center">
-      <Card className="w-full space-y-8 border-none bg-inherit text-left shadow-none">
+    <section className="content_info content_intro">
+      <Card className="w-full space-y-8 text-left">
         <CardHeader className="items-start justify-start space-y-8 p-0">
           <CardTitle className="flex flex-col items-start justify-start gap-3 text-7xl font-bold">
             <span>Prazer, Sou Leonardo.</span>
             <span className="gradient-text">FullStack Developer.</span>
           </CardTitle>
-          <CardDescription className="max-w-prose text-base">
+          <CardDescription className="max-w-lg text-base">
             Fala dev, meu nome é
             <a href="#" className="text-primary">
               {' '}

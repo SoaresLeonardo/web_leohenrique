@@ -22,7 +22,7 @@ const HeaderNavigation = ({ scrolling }: { scrolling: boolean }) => {
         scrolling ? 'rounded-full border p-3 backdrop-blur-lg' : ''
       }`}
     >
-      <motion.ul className="duration-400 flex items-center justify-center transition-colors group-hover:text-muted-foreground/30">
+      <motion.ul className="duration-400 flex items-center justify-center text-foreground/85 transition-colors group-hover:text-muted-foreground/30">
         {navigation_links.map((link, index) => (
           <motion.li
             key={index}
@@ -92,7 +92,6 @@ const Header = () => {
                   className={`rounded-full ${
                     scrolling ? 'pointer-events-none opacity-0' : 'flex'
                   }`}
-                  variant="ghost"
                 >
                   Fale comigo
                 </Button>

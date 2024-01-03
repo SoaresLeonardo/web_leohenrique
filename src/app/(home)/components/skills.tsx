@@ -1,11 +1,11 @@
 import SectionTitle from '@/components/ui/section-title';
-import { skills } from '@/constants/skills';
 import SkillsList from './skills-list';
+import { skills } from '@/constants/skills';
 
 const Skills = () => {
   return (
-    <section>
-      <div className="flex flex-col items-center justify-center">
+    <section className="content_view">
+      <div className="content_info">
         <SectionTitle title="Skills" lineCode />
         <SkillsList skills={skills} />
       </div>

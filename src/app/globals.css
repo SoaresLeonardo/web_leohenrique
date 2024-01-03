@@ -24,9 +24,6 @@
     --input: 215 27.9% 16.9%;
     --ring: 216 12.2% 83.9%;
   }
-}
-
-@layer base {
   * {
     @apply border-border;
   }
@@ -43,8 +40,13 @@
     @apply mx-auto flex min-h-screen w-screen max-w-5xl flex-col items-center text-foreground;
   }
 
-  section {
-    @apply w-full py-28;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    @apply text-foreground/85;
   }
 
   ::selection {
@@ -52,7 +54,7 @@
   }
 
   ::-webkit-scrollbar {
-    @apply w-2
+    @apply w-2;
   }
 
   ::-webkit-scrollbar-track {
@@ -64,27 +66,32 @@
   }
 }
 
-.cursor-dot {
-  @apply h-5 w-5 border border-background bg-accent opacity-100 transition-transform;
-}
+@layer components {
+  .content_view {
+    @apply w-full py-28;
+  }
 
-.hovered {
-  @apply opacity-60;
-}
+  .content_info {
+    @apply flex flex-col items-center justify-center;
+  }
 
-.cursor-dot {
-  position: fixed;
-  top: 0;
-  left: 0;
-  transform: translate(-50%, -50%);
-  border-radius: 50%;
-  z-index: 1;
-  pointer-events: none;
-}
+  .content_intro {
+    @apply h-screen min-h-screen w-full;
+  }
 
-.gradient-text {
-  background: linear-gradient(to right, #57dacd, 90%, #122c3e);
-  background-clip: text;
-  -webkit-background-clip: text;
-  color: transparent;
+  .cursor-dot {
+    @apply pointer-events-none fixed left-0 top-0 z-10 h-5 w-5 translate-x-[-50%] translate-y-[-50%] rounded-full border border-background bg-accent opacity-100 transition-transform;
+  }
+
+  .hovered {
+    @apply opacity-60;
+  }
+
+  /* @apply text-transparent bg-gradient-to-r from-primary via-primary to-background bg-clip-text */
+  .gradient-text {
+    background: linear-gradient(to right, #57dacd, 90%, #122c3e);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
 }

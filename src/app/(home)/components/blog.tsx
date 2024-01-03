@@ -1,19 +1,19 @@
 import BlogPostsList from '@/components/ui/blog-posts-list';
-import { Button } from '@/components/ui/button';
-
 import SectionTitle from '@/components/ui/section-title';
-
+import { Button } from '@/components/ui/button';
 import { posts } from '@/constants/posts';
 import { ArrowUpRight } from 'lucide-react';
 
 const Blog = () => {
   return (
-    <section className="flex flex-col items-center">
-      <SectionTitle title="o que eu estive fazendo." lineCode />
-      <BlogPostsList posts={posts} />
-      <Button className="mt-11" variant="link">
-        Ver todos <ArrowUpRight className="ml-2 h-4 w-4" />
-      </Button>
+    <section className="content_view">
+      <div className="content_info">
+        <SectionTitle title="o que eu estive fazendo." lineCode />
+        <BlogPostsList posts={posts} />
+        <Button className="mt-11" variant="link">
+          Ver todos <ArrowUpRight className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
     </section>
   );
 };

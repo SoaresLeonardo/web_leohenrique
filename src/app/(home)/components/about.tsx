@@ -1,19 +1,19 @@
 import { Card, CardDescription, CardHeader } from '@/components/ui/card';
-import SectionTitle from '@/components/ui/section-title';
 import { Github, Instagram, Linkedin } from 'lucide-react';
+import SectionTitle from '@/components/ui/section-title';
 
 import Image from 'next/image';
 
 const About = () => {
   return (
-    <section>
-      <div className="flex flex-col items-center justify-start">
+    <section className="content_view">
+      <div className="content_info">
         <SectionTitle
           title="Sobre."
           variant="center"
           description="Conheça um pouco sobre mim."
         />
-        <Card className="flex w-full items-center justify-between border-none bg-inherit shadow-none">
+        <Card className="flex w-full items-center justify-between">
           <div className="h-72 w-72 border border-primary">
             <Image
               src="https://avatars.githubusercontent.com/u/100442262?v=4"
