@@ -5,26 +5,34 @@ import {
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
+import { ArrowRight } from 'lucide-react';
 
 const Intro = () => {
   return (
     <section className="content flex h-screen min-h-screen items-center justify-center">
       <Card className="w-full space-y-8 border-none bg-inherit text-left shadow-none">
         <CardHeader className="items-start justify-start space-y-8 p-0">
-          <CardTitle className="flex flex-col items-start justify-start gap-2 text-6xl font-bold">
+          <CardTitle className="flex flex-col items-start justify-start gap-3 text-7xl font-bold">
             <span>Prazer, Sou Leonardo.</span>
             <span className="gradient-text">FullStack Developer.</span>
           </CardTitle>
           <CardDescription className="max-w-prose text-base">
-            Fala dev, meu nome é Leo. Apaixonado pela tecnologia e me dedico a
-            criar experiências incríveis para o usuário. Gosto de descomplicar
-            as coisas, especialmente quando se trata de resolver problemas em
-            interfaces de forma simples e eficaz.
+            Fala dev, meu nome é
+            <a href="#" className="text-primary">
+              {' '}
+              Leo
+            </a>
+            . Apaixonado pela tecnologia e me dedico a criar experiências
+            incríveis para o usuário. Gosto de descomplicar as coisas,
+            especialmente quando se trata de resolver problemas em interfaces de
+            forma simples e eficaz.
           </CardDescription>
         </CardHeader>
         <div className="flex items-center gap-8">
-          <Button className="rounded-full">Ver projetos</Button>
-          <Button variant="link">Quem eu sou?</Button>
+          <Button className="rounded-full">
+            Ver projetos <ArrowRight className="ml-2 h-4 w-4" />
+          </Button>
+          <Button variant="link">Mais sobre mim.</Button>
         </div>
       </Card>
     </section>
