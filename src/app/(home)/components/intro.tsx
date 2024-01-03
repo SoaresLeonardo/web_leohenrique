@@ -22,7 +22,7 @@ const Intro = () => {
             interfaces de forma simples e eficaz.
           </CardDescription>
         </CardHeader>
-        <div className="gap 3 flex items-center">
+        <div className="flex items-center gap-8">
           <Button className="rounded-full">Ver projetos</Button>
           <Button variant="link">Quem eu sou?</Button>
         </div>
