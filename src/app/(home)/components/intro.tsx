@@ -1,30 +1,33 @@
+import { Button } from '@/components/ui/button';
 import {
   Card,
   CardDescription,
   CardHeader,
   CardTitle
 } from '@/components/ui/card';
-import { poppins } from './fonts/poppins';
-import { Button } from '@/components/ui/button';
+
 const Intro = () => {
   return (
-    <Card className="mt-60 w-full space-y-8 border-none bg-inherit text-center shadow-none">
-      <CardHeader className="items-center justify-center space-y-8 p-0">
-        <CardTitle
-          className={`${poppins.className} gradient-text flex flex-col items-center justify-center text-7xl`}
-        >
-          <span>FullStack Developer.</span>
-          <span>Prazer, Sou Leonardo.</span>
-        </CardTitle>
-        <CardDescription className="max-w-prose text-xl text-foreground">
-          Prazer, seja bem vindo! Eu sou Leonardo, apaixonado por tecnologia,
-          sempre buscando aprender algo novo todos os dias.
-        </CardDescription>
-      </CardHeader>
-      <div>
-        <Button className="rounded-full">Meus projetos</Button>
-      </div>
-    </Card>
+    <section className="content flex h-screen min-h-screen items-center justify-center">
+      <Card className="w-full space-y-8 border-none bg-inherit text-left shadow-none">
+        <CardHeader className="items-start justify-start space-y-8 p-0">
+          <CardTitle className="flex flex-col items-start justify-start gap-2 text-6xl font-bold">
+            <span>Prazer, Sou Leonardo.</span>
+            <span className="gradient-text">FullStack Developer.</span>
+          </CardTitle>
+          <CardDescription className="max-w-prose text-base">
+            Fala dev, meu nome é Leo. Apaixonado pela tecnologia e me dedico a
+            criar experiências incríveis para o usuário. Gosto de descomplicar
+            as coisas, especialmente quando se trata de resolver problemas em
+            interfaces de forma simples e eficaz.
+          </CardDescription>
+        </CardHeader>
+        <div className="gap 3 flex items-center">
+          <Button className="rounded-full">Ver projetos</Button>
+          <Button variant="link">Quem eu sou?</Button>
+        </div>
+      </Card>
+    </section>
   );
 };
 
