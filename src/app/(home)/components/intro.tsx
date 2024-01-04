@@ -6,6 +6,7 @@ import {
 } from '@/components/ui/card';
 import { ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
 
 const Intro = () => {
   return (
@@ -28,11 +29,12 @@ const Intro = () => {
             forma simples e eficaz.
           </CardDescription>
         </CardHeader>
-        <div className="flex items-center gap-8">
-          <Button className="rounded-full">
-            Ver projetos <ArrowRight className="ml-2 h-4 w-4" />
-          </Button>
-          <Button variant="link">Mais sobre mim.</Button>
+        <div>
+          <Link href="#blog">
+            <Button className="rounded-full">
+              Vamos começar <ArrowRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </Card>
     </section>

@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    --background: 232, 32%, 9%;
+    --background: 222, 47%, 11%;
     --foreground: 210 20% 98%;
     --card: 224 71.4% 4.1%;
     --card-foreground: 210 20% 98%;
@@ -28,7 +28,11 @@
     @apply border-border;
   }
   body {
-    @apply cursor-none overflow-x-hidden scroll-smooth bg-background text-foreground transition-all;
+    @apply cursor-none overflow-x-hidden bg-background text-foreground transition-all;
+  }
+
+  html {
+    @apply scroll-smooth;
   }
 
   a,
