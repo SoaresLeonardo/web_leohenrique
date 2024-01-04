@@ -1,6 +1,6 @@
 'use client';
 
-import { useCursor } from '@/hooks/useCursor';
+import { useCursor } from '@/hooks/use-cursor';
 import { useEffect, useState } from 'react';
 
 const Cursor = () => {
