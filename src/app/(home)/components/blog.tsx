@@ -6,7 +6,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const Blog = () => {
   return (
-    <section className="content_view">
+    <section className="content_view" id="blog">
       <div className="content_info">
         <SectionTitle title="o que eu estive fazendo." lineCode />
         <BlogPostsList posts={posts} />

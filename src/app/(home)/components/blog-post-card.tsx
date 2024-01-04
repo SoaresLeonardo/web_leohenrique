@@ -22,7 +22,7 @@ type PostProps = {
 
 const BlogPostCard = ({ post }: { post: PostProps }) => {
   return (
-    <Card className="border-none bg-inherit py-2 shadow-none">
+    <Card className="border-none bg-inherit py-1 shadow-none">
       <CardHeader className="flex-row items-center justify-between space-y-0 p-0">
         <CardTitle className="text-xl font-medium">{post.title}</CardTitle>
         <CardDescription className="text-primary">
