@@ -1,6 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
-import Header from '@/components/ui/header';
+import Header from '@/components/ui/header/header';
 import './globals.css';
 import { CursorProvider } from '@/context/cursor';
 import Cursor from '@/components/ui/cursor';
